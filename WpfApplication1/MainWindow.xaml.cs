@@ -20,11 +20,11 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Marble marbles = new Marble();
         public MainWindow()
         {
             InitializeComponent();
-
-            Marble marbles = new Marble();
+            //Marble marbles = new Marble();
             u1Label.DataContext = marbles;
             u2Label.DataContext = marbles;
             u3Label.DataContext = marbles;
@@ -39,16 +39,19 @@ namespace WpfApplication1
             c5Label.DataContext = marbles;
             c6Label.DataContext = marbles;
 
-            List<Marble> userMarbleList = new List<Marble>();
+            // 6 objekt i varje
+            /*List<Marble> userMarbleList = new List<Marble>();
             userMarbleList.Add(marbles);
 
             List<Marble> compMarbleList = new List<Marble>();
-            compMarbleList.Add(marbles);
+            compMarbleList.Add(marbles);*/
+
+         
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-       
+           marbles.Marbles = 10;
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

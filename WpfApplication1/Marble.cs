@@ -9,7 +9,7 @@ namespace WpfApplication1
 {
     public class Marble : INotifyPropertyChanged
     {
-        private int noMarbles;
+        private int noMarbles = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -21,15 +21,21 @@ namespace WpfApplication1
             }
         }
 
-        private void OnPropertyChanged(int noMarbles)
+        private void OnPropertyChanged(String property)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
             {
-                handler(this, new PropertyChangedEventArgs(noMarbles));
+                
+                handler(this, new PropertyChangedEventArgs(property));
             }
-            throw new NotImplementedException();
+
         }
+
+       /* public override string ToString()
+        {
+            return noMarbles.ToString();
+        }*/
 
     }
 }
