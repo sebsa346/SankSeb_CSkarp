@@ -53,6 +53,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\BoardOption.cs" />
+    <Compile Include="Classes\comboboxItem.cs" />
+    <Compile Include="Classes\Marbles\MarblesComp.cs" />
+    <Compile Include="Classes\Marbles\MarbleUser.cs" />
+    <Compile Include="Classes\Marbles\MarbleC1.cs" />
+    <Compile Include="Classes\Marbles\MarbleC2.cs" />
+    <Compile Include="Classes\Marbles\MarbleC3.cs" />
+    <Compile Include="Classes\Marbles\MarbleC4.cs" />
+    <Compile Include="Classes\Marbles\MarbleC5.cs" />
+    <Compile Include="Classes\Marbles\MarbleC6.cs" />
+    <Compile Include="Classes\Marbles\MarbleU6.cs" />
+    <Compile Include="Classes\Marbles\MarbleU5.cs" />
+    <Compile Include="Classes\Marbles\MarbleU4.cs" />
+    <Compile Include="Classes\Marbles\MarbleU3.cs" />
+    <Compile Include="Classes\Marbles\MarbleU2.cs" />
+    <Compile Include="RuleMaster.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,7 +83,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Marble.cs" />
+    <Compile Include="Classes\Marbles\MarbleU1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

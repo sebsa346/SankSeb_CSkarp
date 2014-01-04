@@ -7,17 +7,17 @@ using System.ComponentModel;
 
 namespace WpfApplication1
 {
-    public class Marble : INotifyPropertyChanged
+    public class MarbleU2 : INotifyPropertyChanged
     {
         private int noMarbles = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int Marbles
+        public int MarblesU2
         {
             get { return noMarbles; }
             set { noMarbles = value;
-            OnPropertyChanged("Marbles");
+            OnPropertyChanged("MarblesU2");
             }
         }
 

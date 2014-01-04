@@ -20,25 +20,25 @@
         <Ellipse x:Name="bd" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="372" Margin="10,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="turn" Content="{Binding DisplayTurn, Mode=OneWay}" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top"/>
         <Label Content="P:" HorizontalAlignment="Left" Margin="869,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,0.885"/>
-        <Label x:Name="uPoints" Content="{Binding userPoints}" HorizontalAlignment="Left" Margin="882,18,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="cPoints" Content="{Binding cPoints}" HorizontalAlignment="Left" Margin="40,18,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="uPoints" Content="{Binding UserPoints}" HorizontalAlignment="Left" Margin="882,18,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="cPoints" Content="{Binding CompPoints}" HorizontalAlignment="Left" Margin="40,18,0,0" VerticalAlignment="Top"/>
         <Label Content="P:" HorizontalAlignment="Left" Margin="26,18,0,0" VerticalAlignment="Top"/>
         <Label x:Name="cName" Content="George" HorizontalAlignment="Left" Margin="40,443,0,0" VerticalAlignment="Top"/>
         <Label x:Name="uName" Content="You" HorizontalAlignment="Left" Margin="869,443,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c6Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="754,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c5Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="629,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c4Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="511,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c3Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="395,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c2Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="278,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="c1Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="161,102,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="u6Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="746,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="u5Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="629,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="u4Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="511,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="u3Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="395,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="u2Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="278,342,0,0" VerticalAlignment="Top"/>
-        <Label x:Name ="u1Label" Content="{Binding Marbles}" HorizontalAlignment="Left" Margin="161,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c6Label" Content="{Binding MarblesC6}" HorizontalAlignment="Left" Margin="754,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c5Label" Content="{Binding MarblesC5}" HorizontalAlignment="Left" Margin="629,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c4Label" Content="{Binding MarblesC4}" HorizontalAlignment="Left" Margin="511,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c3Label" Content="{Binding MarblesC3}" HorizontalAlignment="Left" Margin="395,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c2Label" Content="{Binding MarblesC2}" HorizontalAlignment="Left" Margin="278,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="c1Label" Content="{Binding MarblesC1}" HorizontalAlignment="Left" Margin="161,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u6Label" Content="{Binding MarblesU6}" HorizontalAlignment="Left" Margin="746,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u5Label" Content="{Binding MarblesU5}" HorizontalAlignment="Left" Margin="629,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u4Label" Content="{Binding MarblesU4}" HorizontalAlignment="Left" Margin="511,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u3Label" Content="{Binding MarblesU3}" HorizontalAlignment="Left" Margin="395,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u2Label" Content="{Binding MarblesU2}" HorizontalAlignment="Left" Margin="278,342,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="u1Label" Content="{Binding MarblesU1}" HorizontalAlignment="Left" Margin="161,342,0,0" VerticalAlignment="Top"/>
         <Button x:Name="start" Content="Starta" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
-        <Button x:Name="giveUp" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsCancel="True"/>
+        <Button x:Name="giveUp" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2" IsCancel="True"/>
         <Label Content="Score:" HorizontalAlignment="Left" Margin="704,562,0,0" VerticalAlignment="Top"/>
         <Label Content="High Score" HorizontalAlignment="Left" Margin="704,597,0,0" VerticalAlignment="Top"/>
         <ListView x:Name="highScore" HorizontalAlignment="Left" Height="100" Margin="799,601,0,0" VerticalAlignment="Top" Width="100">
@@ -49,12 +49,13 @@
             </ListView.View>
         </ListView>
         <Label x:Name="userScore" Content="{Binding highscore}" HorizontalAlignment="Left" Margin="821,562,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="lvl2" Content="Top3" HorizontalAlignment="Left" Margin="278,575,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-        <RadioButton x:Name="lvl1" Content="Some Guy" HorizontalAlignment="Left" Margin="278,604,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="lvl2" Content="Top3" HorizontalAlignment="Left" Margin="278,575,0,0" VerticalAlignment="Top" />
+        <RadioButton x:Name="lvl1" Content="Some Guy" HorizontalAlignment="Left" Margin="278,604,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <Label Content="Svårighetsgrad:" HorizontalAlignment="Left" Margin="278,544,0,0" VerticalAlignment="Top"/>
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ComboBox x:Name="board" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
         <Label Content="Spelplan" HorizontalAlignment="Left" Margin="114,544,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="testa" Content="Test" HorizontalAlignment="Left" Margin="10,641,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click3"/>
 
     </Grid>
 </Window>
