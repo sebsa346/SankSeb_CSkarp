@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApplication1.Classes
+namespace SanSebKalaha.Classes
 {
     public class BoardOption : INotifyPropertyChanged
     {

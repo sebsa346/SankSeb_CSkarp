@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace WpfApplication1
+namespace SanSebKalaha
 {
     public class MarbleComp : INotifyPropertyChanged
     {

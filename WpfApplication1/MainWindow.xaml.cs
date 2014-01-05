@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace SanSebKalaha
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -41,13 +41,21 @@ namespace WpfApplication1
             InitializeComponent();
             //Marble marbles = new Marble();
             setMarbleValues();
-            int[] arrayTest33 = { 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 0 };
-            arrayTest = arrayTest33;
+            int[] arrayTest3 = { 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 0 };
+            int[] arrayTest4 = { 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0 };
+            int[] arrayTest5 = { 5, 5, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 5, 0 };
             board.Items.Insert(0, "Standard");
             board.Items.Insert(1, "African");
             board.Items.Insert(2, "Colombian");
 
             board.SelectedIndex = 0;
+
+            switch (board)
+            {
+                case board.SelectedIndex == 0: arrayTest = arrayTest3; break;
+                case board.SelectedIndex == 1: arrayTest = arrayTest4; break;
+                case board.SelectedIndex == 2: arrayTest = arrayTest5; break;
+            }
 
             //if(board.SelectedIndex == someIntValue){} Använd för att se vad användaren valde
 
@@ -125,11 +133,12 @@ namespace WpfApplication1
             }
         }
 
+        // Skräp
         private void Button_Click3(object sender, RoutedEventArgs e)
         {
             // Klickar på positionen närmast boet (5)
             int[] arrayTest2 = { 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 0 };
-            int i = 5;
+            int i = 4;
             int moveTheseMarbles = arrayTest[i];
             arrayTest[i] = 0;
             Console.WriteLine("Tjena" + moveTheseMarbles);
@@ -163,5 +172,48 @@ namespace WpfApplication1
         {
 
         }
+
+        private void MouseDownEllipse(object sender, MouseButtonEventArgs e)
+        {
+            Ellipse ellipse = sender as Ellipse;
+            string theEllipse = "";
+
+            // Hämta positionen på den tryckte Ellipse
+            if (ellipse != null)
+            {
+                theEllipse = ellipse.Tag.ToString();
+            }
+            int ellipseInArray = Convert.ToInt32(theEllipse);
+
+            // Hämta antalet kulor som ska flyttas
+            int moveTheseMarbles = arrayTest[ellipseInArray];
+
+            // Sätter nuvarande position till 0
+            arrayTest[ellipseInArray] = 0;
+            int i = 0;
+
+            // Hämta nästkommande ställen som kulorna ska landa på
+            while (i < moveTheseMarbles)
+            {
+                i++;
+                int cupPosition = ellipseInArray + i;
+                if (cupPosition >= 14)
+                {
+                    cupPosition = cupPosition - 14;
+                }
+                arrayTest[cupPosition] = arrayTest[cupPosition] + 1;
+            }
+            // Kör funktion för att uppdatera GUI labels
+            setMarbleValues();
+        }
+
+        //
+        // Saker vi kan göra //
+        //
+
+        // Bakgroundsbild
+        /*<Grid.Background>
+           <ImageBrush Stretch="None" ImageSource="Images/Wood.jpg" AlignmentY="Top" AlignmentX="Center"/>
+       </Grid.Background>*/
     }
 }
