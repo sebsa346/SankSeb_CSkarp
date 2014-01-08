@@ -37,8 +37,6 @@
         <Label x:Name="u3Label" Content="{Binding MarblesU3}" HorizontalAlignment="Left" Margin="395,342,0,0" VerticalAlignment="Top"/>
         <Label x:Name="u2Label" Content="{Binding MarblesU2}" HorizontalAlignment="Left" Margin="278,342,0,0" VerticalAlignment="Top"/>
         <Label x:Name="u1Label" Content="{Binding MarblesU1}" HorizontalAlignment="Left" Margin="161,342,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="start" Content="Starta" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
-        <Button x:Name="giveUp" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2" IsCancel="True"/>
         <Label Content="Score:" HorizontalAlignment="Left" Margin="704,562,0,0" VerticalAlignment="Top"/>
         <Label Content="High Score" HorizontalAlignment="Left" Margin="704,597,0,0" VerticalAlignment="Top"/>
         <ListView x:Name="highScore" HorizontalAlignment="Left" Height="100" Margin="799,601,0,0" VerticalAlignment="Top" Width="100">
@@ -53,9 +51,10 @@
         <RadioButton x:Name="lvl1" Content="Some Guy" HorizontalAlignment="Left" Margin="278,604,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" IsChecked="True"/>
         <Label Content="Svårighetsgrad:" HorizontalAlignment="Left" Margin="278,544,0,0" VerticalAlignment="Top"/>
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <ComboBox x:Name="board" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button x:Name="start" Content="Starta" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click" IsEnabled="{Binding StartButtonIsEnabled, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="giveUp" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="ConcedeButton_Click" IsEnabled="{Binding ConcedeButtonIsEnabled, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox x:Name="board" x:FieldModifier="public" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEnabled="{Binding BoardOptionIsEnabled}"/>
         <Label Content="Spelplan" HorizontalAlignment="Left" Margin="114,544,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="testa" Content="Test" HorizontalAlignment="Left" Margin="10,641,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click3"/>
 
     </Grid>
 </Window>
