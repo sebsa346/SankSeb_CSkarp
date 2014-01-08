@@ -51,9 +51,15 @@
         <RadioButton x:Name="lvl1" Content="Some Guy" HorizontalAlignment="Left" Margin="278,604,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" IsChecked="True"/>
         <Label Content="Svårighetsgrad:" HorizontalAlignment="Left" Margin="278,544,0,0" VerticalAlignment="Top"/>
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button x:Name="start" Content="Starta" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click" IsEnabled="{Binding StartButtonIsEnabled, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button x:Name="giveUp" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="ConcedeButton_Click" IsEnabled="{Binding ConcedeButtonIsEnabled, UpdateSourceTrigger=PropertyChanged}"/>
-        <ComboBox x:Name="board" x:FieldModifier="public" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEnabled="{Binding BoardOptionIsEnabled}"/>
+        <Button x:Name="start" Content="Starta" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click" IsEnabled="{Binding StartButtonIsEnabled}"/>
+        <Button x:Name="concede" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="ConcedeButton_Click" IsEnabled="{Binding ConcedeButtonIsEnabled}"/>
+        <ComboBox x:Name="board" x:FieldModifier="public" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEnabled="{Binding BoardOptionsIsEnabled}">
+            <ComboBox.Items>
+                <ComboBoxItem>Standard</ComboBoxItem>
+                <ComboBoxItem>Afrika</ComboBoxItem>
+                <ComboBoxItem>Colombia</ComboBoxItem>
+            </ComboBox.Items>
+        </ComboBox>
         <Label Content="Spelplan" HorizontalAlignment="Left" Margin="114,544,0,0" VerticalAlignment="Top"/>
 
     </Grid>

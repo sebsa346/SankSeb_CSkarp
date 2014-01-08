@@ -7,21 +7,35 @@ using System.Threading.Tasks;
 
 namespace SanSebKalaha.Classes
 {
-    class ConcedeButton : INotifyPropertyChanged
+    class GameButton : INotifyPropertyChanged
     {
 
-        private bool buttonIsEnabled = false;
+        private bool startButtonIsEnabled = true;
+        private bool concedeButtonIsEnabled = false;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool ConcedeButtonIsEnabled
+        public bool StartButtonIsEnabled
         {
-            get { return (Boolean)buttonIsEnabled; }
+            get { return (Boolean)startButtonIsEnabled; }
             set
             {
-                if (buttonIsEnabled != value)
+                if (startButtonIsEnabled != value)
                 {
-                    buttonIsEnabled = value;
+                    startButtonIsEnabled = value;
+                    RaisePropertyChanged("StartButtonIsEnabled");
+                }
+            }
+        }
+
+        public bool ConcedeButtonIsEnabled
+        {
+            get { return (Boolean)concedeButtonIsEnabled; }
+            set
+            {
+                if (concedeButtonIsEnabled != value)
+                {
+                    concedeButtonIsEnabled = value;
                     RaisePropertyChanged("ConcedeButtonIsEnabled");
                 }
             }

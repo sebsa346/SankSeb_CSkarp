@@ -10,18 +10,18 @@ namespace SanSebKalaha.Classes
     class BoardOptions : INotifyPropertyChanged
     {
 
-        private bool boardOptionsIsEnabled = true;
+        private bool _boardOptionsIsEnabled = true;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public bool BoardOptionsIsEnabled
         {
-            get { return (Boolean)boardOptionsIsEnabled; }
+            get { return (Boolean)_boardOptionsIsEnabled; }
             set
             {
-                if (boardOptionsIsEnabled != value)
+                if (_boardOptionsIsEnabled != value)
                 {
-                    boardOptionsIsEnabled = value;
+                    _boardOptionsIsEnabled = value;
                     RaisePropertyChanged("BoardOptionsIsEnabled");
                 }
             }
