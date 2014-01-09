@@ -22,18 +22,6 @@ namespace SanSebKalaha
     public partial class MainWindow : Window
     {
 
-        private MarbleUser marblesUser = new MarbleUser();
-        private MarbleComp marblesComp = new MarbleComp();
-
-        
-        private BoardOptions boardOptions = new BoardOptions();
-
-        int[] arrayTest = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        int[] arrayTest0 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        int[] arrayTest3 = { 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 0 };
-        int[] arrayTest4 = { 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0 };
-        int[] arrayTest5 = { 5, 5, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 5, 0 };
-
         RuleMaster ruleMaster = new RuleMaster();
 
         public MainWindow()
@@ -44,16 +32,20 @@ namespace SanSebKalaha
 
             setLabelContexts();
 
-            start.DataContext = ruleMaster.gameButton;
-            concede.DataContext = ruleMaster.gameButton;
-            board.DataContext = ruleMaster.boardOptions;
-
             board.SelectedIndex = 0;
                    
         }
 
         private void setLabelContexts()
         {
+
+            start.DataContext = ruleMaster.gameButton;
+            concede.DataContext = ruleMaster.gameButton;
+
+            board.DataContext = ruleMaster.boardOptions;
+
+            displayTurn.DataContext = ruleMaster.playersTurn;
+
             u1Label.DataContext = ruleMaster.marbles;
             u2Label.DataContext = ruleMaster.marbles;
             u3Label.DataContext = ruleMaster.marbles;

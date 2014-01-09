@@ -18,7 +18,7 @@
         <Ellipse x:Name="c2" MouseDown="MouseDownEllipse" Tag="11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
         <Ellipse x:Name="bu" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="372" Margin="827,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
         <Ellipse x:Name="bd" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="372" Margin="10,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
-        <Label x:Name="turn" Content="{Binding DisplayTurn, Mode=OneWay}" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="displayTurn" Content="{Binding WhosTurn}" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top"/>
         <Label Content="P:" HorizontalAlignment="Left" Margin="869,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,0.885"/>
         <Label x:Name="uPoints" Content="{Binding UserPoints}" HorizontalAlignment="Left" Margin="882,18,0,0" VerticalAlignment="Top"/>
         <Label x:Name="cPoints" Content="{Binding CompPoints}" HorizontalAlignment="Left" Margin="40,18,0,0" VerticalAlignment="Top"/>

@@ -58,6 +58,7 @@
     <Compile Include="Classes\Marbles.cs" />
     <Compile Include="Classes\Marbles\MarblesComp.cs" />
     <Compile Include="Classes\Marbles\MarbleUser.cs" />
+    <Compile Include="Classes\PlayersTurn.cs" />
     <Compile Include="RuleMaster.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
