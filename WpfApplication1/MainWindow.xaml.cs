@@ -28,9 +28,9 @@ namespace SanSebKalaha
         {
             InitializeComponent();
 
-            ruleMaster.startUp();
-
             setLabelContexts();
+
+            ruleMaster.preGame();
 
             board.SelectedIndex = 0;
                    
@@ -62,6 +62,20 @@ namespace SanSebKalaha
 
             uPoints.DataContext = ruleMaster.marblesUser;
             cPoints.DataContext = ruleMaster.marblesComp;
+
+            u1.DataContext = ruleMaster.availableEllipses;
+            u2.DataContext = ruleMaster.availableEllipses;
+            u3.DataContext = ruleMaster.availableEllipses;
+            u4.DataContext = ruleMaster.availableEllipses;
+            u5.DataContext = ruleMaster.availableEllipses;
+            u6.DataContext = ruleMaster.availableEllipses;
+
+            c1.DataContext = ruleMaster.availableEllipses;
+            c2.DataContext = ruleMaster.availableEllipses;
+            c3.DataContext = ruleMaster.availableEllipses;
+            c4.DataContext = ruleMaster.availableEllipses;
+            c5.DataContext = ruleMaster.availableEllipses;
+            c6.DataContext = ruleMaster.availableEllipses;
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)

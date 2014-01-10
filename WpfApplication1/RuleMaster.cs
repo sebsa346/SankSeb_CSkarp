@@ -31,6 +31,8 @@ namespace SanSebKalaha
         public BoardOptions boardOptions = new BoardOptions();
         public PlayersTurn playersTurn = new PlayersTurn();
 
+        public AvailableEllipses availableEllipses = new AvailableEllipses();
+
         private string currentPlayer = "";
 
         private int[] arrayTest = new int[14];
@@ -49,9 +51,15 @@ namespace SanSebKalaha
         private int[] miniArrayTestC4 = { 4, 4, 4, 4, 4, 4, 0 };*/
 
 
-        public void startUp()
+        public void preGame()
         {
-         
+            gameButton.StartButtonIsEnabled = true; 
+            gameButton.ConcedeButtonIsEnabled = false; 
+            boardOptions.BoardOptionsIsEnabled = true; 
+            availableEllipses.UserEllipsesIsEnabled = false;
+            availableEllipses.CompEllipsesIsEnabled = false;
+            playersTurn.WhosTurn = "Inget spel igång";
+
         }
 
 
@@ -105,6 +113,10 @@ namespace SanSebKalaha
             // Första spelaren börjar
             playersTurn.WhosTurn = "You";
 
+            // Sätter att User ALLTID börjar
+            availableEllipses.UserEllipsesIsEnabled = true;
+            availableEllipses.CompEllipsesIsEnabled = false;
+
             if (boardIndex == 0)
             {
                 setArray(3);
@@ -141,8 +153,7 @@ namespace SanSebKalaha
             MessageBoxResult result = MessageBox.Show("Är du säker på att du vill ge upp?", "Ge upp?", MessageBoxButton.YesNo);
             switch (result)
             {
-                case MessageBoxResult.Yes: Array.Clear(arrayTest,0,14); gameButton.StartButtonIsEnabled = true; 
-                    gameButton.ConcedeButtonIsEnabled = false; boardOptions.BoardOptionsIsEnabled = true; setMarbleValues(); break;
+                case MessageBoxResult.Yes: Array.Clear(arrayTest, 0, 14); preGame(); setMarbleValues(); break;
                 case MessageBoxResult.No: break;
             }
 
@@ -227,10 +238,14 @@ namespace SanSebKalaha
             if (currentPlayer == "You")
             {
                 playersTurn.WhosTurn = "George";
+                availableEllipses.CompEllipsesIsEnabled = true;
+                availableEllipses.UserEllipsesIsEnabled = false;
             }
             else
             {
                 playersTurn.WhosTurn = "You";
+                availableEllipses.CompEllipsesIsEnabled = false;
+                availableEllipses.UserEllipsesIsEnabled = true;
             }
         }
 

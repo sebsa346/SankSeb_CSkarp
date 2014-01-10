@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\AvailableEllipses.cs" />
     <Compile Include="Classes\BoardOptions.cs" />
     <Compile Include="Classes\GameButton.cs" />
     <Compile Include="Classes\Marbles.cs" />

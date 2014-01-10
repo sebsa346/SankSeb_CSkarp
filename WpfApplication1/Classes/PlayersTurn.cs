@@ -10,7 +10,7 @@ namespace SanSebKalaha.Classes
     class PlayersTurn : INotifyPropertyChanged
     {
 
-        private string _whosTurn = "Inget spel igång";
+        private string _whosTurn = "";
 
         public event PropertyChangedEventHandler PropertyChanged;
 

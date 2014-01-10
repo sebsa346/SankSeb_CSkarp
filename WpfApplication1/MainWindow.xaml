@@ -4,18 +4,18 @@
         xmlns:local="clr-namespace:SanSebKalaha" x:Class="SanSebKalaha.MainWindow"
         Title="MainWindow" Height="766" Width="958">
     <Grid Margin="0,0,-8,0">
-        <Ellipse x:Name="c5" MouseDown="MouseDownEllipse" Tag="8" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="592,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="u2" MouseDown="MouseDownEllipse" Tag="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="u6" MouseDown="MouseDownEllipse" Tag="5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="710,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
-        <Ellipse x:Name="c6" MouseDown="MouseDownEllipse" Tag="7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="710,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
-        <Ellipse x:Name="u1" MouseDown="MouseDownEllipse" Tag="0" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="123,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
-        <Ellipse x:Name="c1" MouseDown="MouseDownEllipse" Tag="12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="123,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
-        <Ellipse x:Name="u4" MouseDown="MouseDownEllipse" Tag="3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="475,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="c3" MouseDown="MouseDownEllipse" Tag="10" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="357,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="u3" MouseDown="MouseDownEllipse" Tag="2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="357,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="c4" MouseDown="MouseDownEllipse" Tag="9" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="475,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="u5" MouseDown="MouseDownEllipse" Tag="4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="592,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
-        <Ellipse x:Name="c2" MouseDown="MouseDownEllipse" Tag="11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="c5" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="8" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="592,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="u2" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="u6" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="710,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
+        <Ellipse x:Name="c6" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="710,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
+        <Ellipse x:Name="u1" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="0" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="123,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
+        <Ellipse x:Name="c1" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="123,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="111"/>
+        <Ellipse x:Name="u4" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="475,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="c3" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="10" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="357,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="u3" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="357,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="c4" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="9" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="475,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="u5" IsEnabled="{Binding UserEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="592,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Ellipse x:Name="c2" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
         <Ellipse x:Name="bu" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="372" Margin="827,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
         <Ellipse x:Name="bd" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="372" Margin="10,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="displayTurn" Content="{Binding WhosTurn}" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top"/>
