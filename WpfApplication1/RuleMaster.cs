@@ -175,12 +175,10 @@ namespace SanSebKalaha
         private void isItCapture(int cupPosition)
         {
             int crossEllipse = 0;
-            Console.WriteLine("Inne i ISCapture: " + cupPosition);
 
             // Kolla ifall det finns en möjlighet att en "Capture" har skett
             if ((cupPosition <= 5 && currentPlayer == "You") && (arrayTest[cupPosition] == 1))
             {
-                Console.WriteLine("Inne u");
                 crossEllipse = 13 - (cupPosition + 1);
                 arrayTest[6] += arrayTest[crossEllipse] + 1;
                 arrayTest[cupPosition] = 0;
@@ -189,7 +187,6 @@ namespace SanSebKalaha
             }
             else if ((Enumerable.Range(7,6).Contains(cupPosition) && currentPlayer == "George") && (arrayTest[cupPosition] == 1)) 
             {
-                Console.WriteLine("Inne C");
                 crossEllipse = ellipsePartner(cupPosition);
                 arrayTest[13] += arrayTest[crossEllipse] + 1;
                 arrayTest[cupPosition] = 0;
@@ -263,7 +260,7 @@ namespace SanSebKalaha
             {
                 theEllipse = ellipse.Tag.ToString();
             }
-            ellipsePositionInArray = Convert.ToInt32(theEllipse);
+             ellipsePositionInArray = Convert.ToInt32(theEllipse);
 
             // Hämta antalet kulor som ska flyttas
             int moveTheseMarbles = arrayTest[ellipsePositionInArray];
