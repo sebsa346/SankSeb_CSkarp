@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SanSebKalaha.Classes
 {
-    class GameButton : INotifyPropertyChanged
+    public class GameButton : INotifyPropertyChanged
     {
 
         private bool startButtonIsEnabled = true;

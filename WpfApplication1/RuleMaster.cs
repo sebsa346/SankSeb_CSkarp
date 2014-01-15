@@ -17,9 +17,8 @@ using System.Windows.Shapes;
 namespace SanSebKalaha
 {
 
-    class RuleMaster
+    public class RuleMaster
     {
-        //MainWindow mw = new MainWindow();
 
         public Marbles marbles = new Marbles();
 
@@ -33,23 +32,12 @@ namespace SanSebKalaha
 
         public AvailableEllipses availableEllipses = new AvailableEllipses();
 
-        private string currentPlayer = "";
+        public string currentPlayer = "";
 
-        private int[] arrayTest = new int[14];
-        /*private int[] arrayTest0 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        private int[] arrayTest3 = { 3, 3, 3, 3, 3, 3, 0, 3, 3, 3, 3, 3, 3, 0 };
-        private int[] arrayTest4 = { 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0 };
-        private int[] arrayTest5 = { 5, 5, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 5, 0 };*/
+        public int tre = 3;
 
-        /*private int[] miniArrayTestU = { 0, 0, 0, 0, 0, 0, 0 };
-        private int[] miniArrayTestC = { 0, 0, 0, 0, 0, 0, 0 };
-        private int[] miniArrayTestU0 = { 0, 0, 0, 0, 0, 0, 0 };
-        private int[] miniArrayTestC0 = { 0, 0, 0, 0, 0, 0, 0 };
-        private int[] miniArrayTestU3 = { 3, 3, 3, 3, 3, 3, 0 };
-        private int[] miniArrayTestC3 = { 3, 3, 3, 3, 3, 3, 0 };
-        private int[] miniArrayTestU4 = { 4, 4, 4, 4, 4, 4, 0 };
-        private int[] miniArrayTestC4 = { 4, 4, 4, 4, 4, 4, 0 };*/
-
+        public int[] arrayTest = new int[14];
+   
 
         public void preGame()
         {
@@ -62,8 +50,8 @@ namespace SanSebKalaha
 
         }
 
-
-        private void setMarbleValues()
+        // Uppdateras alla marbles med värden som finns i spelsplans-arrayen.
+        public void setMarbleValues()
         {
             marbles.MarblesU1 = arrayTest[0];
             marbles.MarblesU2 = arrayTest[1];
@@ -81,35 +69,23 @@ namespace SanSebKalaha
 
             marblesUser.UserPoints = arrayTest[6];
             marblesComp.CompPoints = arrayTest[13];
- 
 
-           /* marbles.MarblesU1 = miniArrayTestU[0];
-            marbles.MarblesU2 = miniArrayTestU[1];
-            marbles.MarblesU3 = miniArrayTestU[2];
-            marbles.MarblesU4 = miniArrayTestU[3];
-            marbles.MarblesU5 = miniArrayTestU[4];
-            marbles.MarblesU6 = miniArrayTestU[5];
+            Console.WriteLine(marbles.MarblesU1);
+            Console.WriteLine(marbles.MarblesU2);
+            Console.WriteLine(marbles.MarblesU3);
+            Console.WriteLine(marbles.MarblesU4);
+            Console.WriteLine(marbles.MarblesU5);
 
-            marblesUser.UserPoints = miniArrayTestU[6];
-
-
-            marbles.MarblesC1 = miniArrayTestC[0];
-            marbles.MarblesC2 = miniArrayTestC[1];
-            marbles.MarblesC3 = miniArrayTestC[2];
-            marbles.MarblesC4 = miniArrayTestC[3];
-            marbles.MarblesC5 = miniArrayTestC[4];
-            marbles.MarblesC6 = miniArrayTestC[5];
-
-            marblesComp.CompPoints = miniArrayTestC[6];*/
 
         }
 
-        public void GameRules(int boardIndex)
+        public void gameRules(int boardIndex)
         {
             gameButton.StartButtonIsEnabled = false;
             gameButton.ConcedeButtonIsEnabled = true;
             boardOptions.BoardOptionsIsEnabled = false;
 
+            Console.WriteLine(boardIndex);
             // Första spelaren börjar
             playersTurn.WhosTurn = "You";
 
@@ -246,21 +222,30 @@ namespace SanSebKalaha
             }
         }
 
-        public void MouseDownEllipsee(object sender, MouseButtonEventArgs e)
+        // Tar emot "Tag" från Ellipsen som användaren valt, som sedan arbetas om till en int.
+        public void collectEllipseID(object sender)
         {
             Ellipse ellipse = sender as Ellipse;
 
             string theEllipse = "";
-            int cupPosition = 0;
             int ellipsePositionInArray = 0;
-            currentPlayer = playersTurn.WhosTurn;
 
             // Hämta positionen på den valda Ellipsen
             if (ellipse != null)
             {
                 theEllipse = ellipse.Tag.ToString();
             }
-             ellipsePositionInArray = Convert.ToInt32(theEllipse);
+            ellipsePositionInArray = Convert.ToInt32(theEllipse);
+
+            MouseDownEllipsee(ellipsePositionInArray);
+        }
+
+        // Tar emot användarens val av ellipse och agerar därefter med att
+        // uppdatera de fack som ska uppdateras.
+        public void MouseDownEllipsee(int ellipsePositionInArray)
+        {
+            int cupPosition = 0;
+            currentPlayer = playersTurn.WhosTurn;
 
             // Hämta antalet kulor som ska flyttas
             int moveTheseMarbles = arrayTest[ellipsePositionInArray];

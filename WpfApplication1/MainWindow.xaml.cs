@@ -36,7 +36,7 @@ namespace SanSebKalaha
                    
         }
 
-        private void setLabelContexts()
+        public void setLabelContexts()
         {
 
             start.DataContext = ruleMaster.gameButton;
@@ -80,7 +80,7 @@ namespace SanSebKalaha
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            ruleMaster.GameRules(board.SelectedIndex);
+            ruleMaster.gameRules(board.SelectedIndex);
             setLabelContexts();
 
 
@@ -107,7 +107,7 @@ namespace SanSebKalaha
         private void MouseDownEllipse(object sender, MouseButtonEventArgs e)
         {
 
-            ruleMaster.MouseDownEllipsee(sender, e);
+            ruleMaster.collectEllipseID(sender);
 
             /*Ellipse ellipse = sender as Ellipse;
             string theEllipse = "";

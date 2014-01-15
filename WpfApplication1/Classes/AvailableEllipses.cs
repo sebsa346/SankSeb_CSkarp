@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SanSebKalaha.Classes
 {
-    class AvailableEllipses : INotifyPropertyChanged
+    public class AvailableEllipses : INotifyPropertyChanged
     {
 
         private bool _userEllipsesIsEnabled = false;

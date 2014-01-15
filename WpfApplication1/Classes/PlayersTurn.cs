@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SanSebKalaha.Classes
 {
-    class PlayersTurn : INotifyPropertyChanged
+    public class PlayersTurn : INotifyPropertyChanged
     {
 
         private string _whosTurn = "";

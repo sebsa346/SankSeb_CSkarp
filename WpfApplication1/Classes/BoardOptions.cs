@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SanSebKalaha.Classes
 {
-    class BoardOptions : INotifyPropertyChanged
+    public class BoardOptions : INotifyPropertyChanged
     {
 
         private bool _boardOptionsIsEnabled = true;
