@@ -148,6 +148,15 @@ namespace SanSebKalaha
         // Bakgroundsbild
         /*<Grid.Background>
            <ImageBrush Stretch="None" ImageSource="Images/Wood.jpg" AlignmentY="Top" AlignmentX="Center"/>
-       </Grid.Background>*/
+       </Grid.Background>
+         DatabaseFirstKalaha.Program dbk = new DatabaseFirstKalaha.Program();
+         */
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            ruleMaster.saveGameToDB();
+
+        }
     }
+
+
 }

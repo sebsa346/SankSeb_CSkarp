@@ -56,6 +56,7 @@
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button x:Name="start" Content="Starta" Opacity="05" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click" IsEnabled="{Binding StartButtonIsEnabled}"/>
         <Button x:Name="concede" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="ConcedeButton_Click" IsEnabled="{Binding ConcedeButtonIsEnabled}"/>
+        <Button x:Name="save" Content="Spara i d" HorizontalAlignment="Left" Margin="12,651,0,0" VerticalAlignment="Top" Width="95" Click="SaveButton_Click" />
         <ComboBox x:Name="board" x:FieldModifier="public" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEnabled="{Binding BoardOptionsIsEnabled}">
             <ComboBox.Items>
                 <ComboBoxItem>Standard</ComboBoxItem>

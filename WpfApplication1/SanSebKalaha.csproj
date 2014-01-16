@@ -101,6 +101,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseFirstKalaha\DatabaseFirstKalaha.csproj">
+      <Project>{d1bbab81-fb92-4315-a73c-f1462a74043b}</Project>
+      <Name>DatabaseFirstKalaha</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

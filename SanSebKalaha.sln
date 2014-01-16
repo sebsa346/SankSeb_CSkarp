@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanSebKalaha", "WpfApplicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSanSeb", "UnitTestSanSeb\UnitTestSanSeb.csproj", "{0497D286-0FD9-4444-840A-BE3D3FE5B72A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstKalaha", "DatabaseFirstKalaha\DatabaseFirstKalaha.csproj", "{D1BBAB81-FB92-4315-A73C-F1462A74043B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0497D286-0FD9-4444-840A-BE3D3FE5B72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0497D286-0FD9-4444-840A-BE3D3FE5B72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0497D286-0FD9-4444-840A-BE3D3FE5B72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1BBAB81-FB92-4315-A73C-F1462A74043B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1BBAB81-FB92-4315-A73C-F1462A74043B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1BBAB81-FB92-4315-A73C-F1462A74043B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1BBAB81-FB92-4315-A73C-F1462A74043B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

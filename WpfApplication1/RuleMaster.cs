@@ -275,7 +275,18 @@ namespace SanSebKalaha
 
         }
 
-     
+        public void saveGameToDB()
+        {
+            string gameBoard = "";
+            DatabaseFirstKalaha.Program dbk = new DatabaseFirstKalaha.Program();
+            foreach (int noMarbles in arrayTest)
+            {
+                Console.WriteLine(noMarbles);
+                gameBoard += noMarbles;
+            }
+            Console.WriteLine(gameBoard);
+            dbk.saveGame(gameBoard);
+        }
    
         //
         // Saker vi kan göra //
