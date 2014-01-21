@@ -34,8 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,6 +70,25 @@
     <Compile Include="Classes\Marbles\MarblesComp.cs" />
     <Compile Include="Classes\Marbles\MarbleUser.cs" />
     <Compile Include="Classes\PlayersTurn.cs" />
+    <Compile Include="Game.cs">
+      <DependentUpon>KalahaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KalahaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KalahaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KalahaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KalahaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KalahaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KalahaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="RuleMaster.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +121,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="KalahaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KalahaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KalahaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KalahaModel.edmx</DependentUpon>
+      <LastGenOutput>KalahaModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="KalahaModel.edmx.diagram">
+      <DependentUpon>KalahaModel.edmx</DependentUpon>
+    </None>
+    <None Include="KalahaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KalahaModel.edmx</DependentUpon>
+      <LastGenOutput>KalahaModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,10 +149,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseFirstKalaha\DatabaseFirstKalaha.csproj">
-      <Project>{d1bbab81-fb92-4315-a73c-f1462a74043b}</Project>
-      <Name>DatabaseFirstKalaha</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

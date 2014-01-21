@@ -1,6 +1,7 @@
 ﻿using SanSebKalaha.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,22 +33,31 @@ namespace SanSebKalaha
 
         public AvailableEllipses availableEllipses = new AvailableEllipses();
 
+        private Program dbC = new Program();
+
         public string currentPlayer = "";
 
         public int tre = 3;
 
         public int[] arrayTest = new int[14];
-   
+
 
         public void preGame()
         {
-            gameButton.StartButtonIsEnabled = true; 
-            gameButton.ConcedeButtonIsEnabled = false; 
-            boardOptions.BoardOptionsIsEnabled = true; 
-            availableEllipses.UserEllipsesIsEnabled = false;
-            availableEllipses.CompEllipsesIsEnabled = false;
-            playersTurn.WhosTurn = "Inget spel igång";
-
+            // Kollar om det finns ett sparat spel som användaren vill fortsätta på
+            if (checkForSavedGameInDB() == true)
+            {
+                getGameFromDB();
+            }
+            else
+            {
+                gameButton.StartButtonIsEnabled = true;
+                gameButton.ConcedeButtonIsEnabled = false;
+                boardOptions.BoardOptionsIsEnabled = true;
+                availableEllipses.UserEllipsesIsEnabled = false;
+                availableEllipses.CompEllipsesIsEnabled = false;
+                playersTurn.WhosTurn = "Inget spel igång";
+            }
         }
 
         // Uppdateras alla marbles med värden som finns i spelsplans-arrayen.
@@ -85,7 +95,6 @@ namespace SanSebKalaha
             gameButton.ConcedeButtonIsEnabled = true;
             boardOptions.BoardOptionsIsEnabled = false;
 
-            Console.WriteLine(boardIndex);
             // Första spelaren börjar
             playersTurn.WhosTurn = "You";
 
@@ -109,8 +118,10 @@ namespace SanSebKalaha
             setMarbleValues();
         }
 
+        // Sätter arrayen som innehåller startkulorna
         private void setArray(int noMarblesToStart)
         {
+   
             for (int i = 0; i < arrayTest.Length; i++)
             {
                 if (!(i == 6 || i == 13))
@@ -122,6 +133,7 @@ namespace SanSebKalaha
                     arrayTest[i] = 0;
                 }
             }
+        
         }
 
         public void ConcedeWindow()
@@ -132,19 +144,6 @@ namespace SanSebKalaha
                 case MessageBoxResult.Yes: Array.Clear(arrayTest, 0, 14); preGame(); setMarbleValues(); break;
                 case MessageBoxResult.No: break;
             }
-
-
-        }
-
-        private void RadioButton_Check(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //gameRules();
-
         }
 
         // Kollar ifall spelregeln "Capture" ska tillämpas
@@ -278,35 +277,86 @@ namespace SanSebKalaha
         public void saveGameToDB()
         {
             string gameBoard = "";
-            DatabaseFirstKalaha.Program dbk = new DatabaseFirstKalaha.Program();
+            List<string> gameData = new List<string>();
             foreach (int noMarbles in arrayTest)
             {
                 Console.WriteLine(noMarbles);
-                gameBoard += noMarbles;
+                gameBoard += noMarbles + " ";
             }
             Console.WriteLine(gameBoard);
-            dbk.saveGame(gameBoard);
+            gameData.Add(gameBoard);
+            gameData.Add(playersTurn.WhosTurn);
+            Console.WriteLine(gameData[0]);
+            Console.WriteLine(gameData[1]);
+            dbC.saveGame(gameData);
         }
-   
-        //
-        // Saker vi kan göra //
-        //
 
-        // Bakgroundsbild
-        /*<Grid.Background>
-           <ImageBrush Stretch="None" ImageSource="Images/Wood.jpg" AlignmentY="Top" AlignmentX="Center"/>
-       </Grid.Background>*/
+        public void getGameFromDB()
+        {
+            List<string> gameData = new List<string>();
+            gameData = dbC.getGame();
 
-        // Gamla lösningen med 1 array
-        /* while (i < moveTheseMarbles)
+            // Sätter igång det nya spelet
+            gameButton.StartButtonIsEnabled = false;
+            gameButton.ConcedeButtonIsEnabled = true;
+            boardOptions.BoardOptionsIsEnabled = false;
+
+            // Första spelaren börjar
+            playersTurn.WhosTurn = gameData[1];
+
+            // Sätter att User ALLTID börjar
+            if (playersTurn.WhosTurn == "You")
             {
-                i++;
-                cupPosition = ellipseInArray + i;
-                if (cupPosition >= 14)
+                availableEllipses.UserEllipsesIsEnabled = true;
+                availableEllipses.CompEllipsesIsEnabled = false;
+            }
+            else
+            {
+                availableEllipses.UserEllipsesIsEnabled = false;
+                availableEllipses.CompEllipsesIsEnabled = true;
+            }
+            string hej = gameData[0];
+            Console.WriteLine("Inne i getGameFroMDb:");
+            Console.WriteLine(Char.GetNumericValue(hej[0]));
+            arrayTest = splitQueryString(gameData[0]);
+            setMarbleValues();
+            
+        }
+
+        public bool checkForSavedGameInDB()
+        {
+            bool proceedWithSavedGame = false;
+
+            if (dbC.checkForSavedGame() != 0)
+            {
+                MessageBoxResult result = MessageBox.Show("Du har en undansparad match, vill du fortsätta på den?", "En sparad match hittades!", MessageBoxButton.YesNo);
+                switch (result)
                 {
-                    cupPosition = cupPosition - 14;
+                    case MessageBoxResult.Yes: proceedWithSavedGame = true; break;
+                    case MessageBoxResult.No: proceedWithSavedGame = false; dbC.removePreviousGame(); break;
                 }
-                arrayTest[cupPosition] = arrayTest[cupPosition] + 1;
-            } */
+            }
+
+            return proceedWithSavedGame;
+        }
+
+        public void MainWindowClosing(object sender, CancelEventArgs e)
+        {
+            // Spara matchen ifall det verkligen är en match igång
+            if (gameButton.StartButtonIsEnabled.Equals(false))
+                saveGameToDB();
+            Console.WriteLine("Stängd i RuleMaster");
+        }
+
+        public int[] splitQueryString(string splitThis) 
+        {
+            string[] marblesInString = new string[14];
+            //int[] marblesInInt = new int[14];
+            marblesInString = splitThis.Split(' ');
+            int[] marblesInInt = Array.ConvertAll<string, int>(marblesInString, int.Parse);
+            Console.
+            return marblesInInt;
+        }
+
     }
 }

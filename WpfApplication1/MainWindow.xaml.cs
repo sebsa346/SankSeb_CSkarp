@@ -33,6 +33,8 @@ namespace SanSebKalaha
             ruleMaster.preGame();
 
             board.SelectedIndex = 0;
+
+            Closing += ruleMaster.MainWindowClosing;
                    
         }
 
@@ -156,6 +158,26 @@ namespace SanSebKalaha
             ruleMaster.saveGameToDB();
 
         }
+
+        private void GetButton_Click(object sender, RoutedEventArgs e)
+        {
+            Program dbC = new Program();
+            dbC.checkForSavedGame();
+
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Program dbC = new Program();
+            dbC.removePreviousGame();
+
+        }
+
+        /*private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Console.WriteLine("Stänger nu");
+        }*/
+        
     }
 
 
