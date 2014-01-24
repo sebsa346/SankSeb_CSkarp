@@ -1,18 +1,6 @@
-﻿using SanSebKalaha.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SanSebKalaha
 {
@@ -47,6 +35,9 @@ namespace SanSebKalaha
             board.DataContext = ruleMaster.boardOptions;
 
             displayTurn.DataContext = ruleMaster.playersTurn;
+            uName.DataContext = ruleMaster.playersTurn;
+            cName.DataContext = ruleMaster.playersTurn;
+            gameOver.DataContext = ruleMaster.boardOptions;
 
             u1Label.DataContext = ruleMaster.marbles;
             u2Label.DataContext = ruleMaster.marbles;
@@ -82,11 +73,8 @@ namespace SanSebKalaha
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            ruleMaster.gameRules(board.SelectedIndex);
             setLabelContexts();
-
-
-
+            ruleMaster.gameRules(board.SelectedIndex);
         }
 
         private void ConcedeButton_Click(object sender, RoutedEventArgs e)
@@ -94,12 +82,6 @@ namespace SanSebKalaha
             ruleMaster.ConcedeWindow();
        
         }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -108,51 +90,9 @@ namespace SanSebKalaha
 
         private void MouseDownEllipse(object sender, MouseButtonEventArgs e)
         {
-
             ruleMaster.collectEllipseID(sender);
-
-            /*Ellipse ellipse = sender as Ellipse;
-            string theEllipse = "";
-
-            // Hämta positionen på den tryckte Ellipse
-            if (ellipse != null)
-            {
-                theEllipse = ellipse.Tag.ToString();
-            }
-            int ellipseInArray = Convert.ToInt32(theEllipse);
-
-            // Hämta antalet kulor som ska flyttas
-            int moveTheseMarbles = arrayTest[ellipseInArray];
-
-            // Sätter nuvarande position till 0
-            arrayTest[ellipseInArray] = 0;
-            int i = 0;
-
-            // Hämta nästkommande ställen som kulorna ska landa på
-            while (i < moveTheseMarbles)
-            {
-                i++;
-                int cupPosition = ellipseInArray + i;
-                if (cupPosition >= 14)
-                {
-                    cupPosition = cupPosition - 14;
-                }
-                arrayTest[cupPosition] = arrayTest[cupPosition] + 1;
-            }
-            // Kör funktion för att uppdatera GUI labels
-            setLabelContexts(); */
         }
 
-        //
-        // Saker vi kan göra //
-        //
-
-        // Bakgroundsbild
-        /*<Grid.Background>
-           <ImageBrush Stretch="None" ImageSource="Images/Wood.jpg" AlignmentY="Top" AlignmentX="Center"/>
-       </Grid.Background>
-         DatabaseFirstKalaha.Program dbk = new DatabaseFirstKalaha.Program();
-         */
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             ruleMaster.saveGameToDB();
@@ -172,11 +112,6 @@ namespace SanSebKalaha
             dbC.removePreviousGame();
 
         }
-
-        /*private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Console.WriteLine("Stänger nu");
-        }*/
         
     }
 

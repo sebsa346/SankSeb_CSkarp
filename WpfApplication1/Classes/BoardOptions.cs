@@ -11,6 +11,8 @@ namespace SanSebKalaha.Classes
     {
 
         private bool _boardOptionsIsEnabled = true;
+        private string _announcement = "";
+        private string _color = "Black";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,17 +24,44 @@ namespace SanSebKalaha.Classes
                 if (_boardOptionsIsEnabled != value)
                 {
                     _boardOptionsIsEnabled = value;
-                    RaisePropertyChanged("BoardOptionsIsEnabled");
+                    OnPropertyChanged("BoardOptionsIsEnabled");
                 }
             }
         }
 
-        private void RaisePropertyChanged(String property)
+        public string Announcement
         {
-            if (PropertyChanged != null)
+            get { return _announcement; }
+            set
+            {
+                if (_announcement != value)
+                {
+                    _announcement = value;
+                    OnPropertyChanged("Announcement");
+                }
+            }
+        }
+
+        public string Color
+        {
+            get { return _color; }
+            set
+            {
+                if (_color != value)
+                {
+                    _color = value;
+                    OnPropertyChanged("Color");
+                }
+            }
+        }
+
+        private void OnPropertyChanged(String property)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
 
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+                handler(this, new PropertyChangedEventArgs(property));
             }
 
         }

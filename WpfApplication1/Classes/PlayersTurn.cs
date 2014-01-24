@@ -11,6 +11,10 @@ namespace SanSebKalaha.Classes
     {
 
         private string _whosTurn = "";
+        private string _color = "";
+
+        private string _player1Name = "";
+        private string _player2Name = "";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,12 +26,43 @@ namespace SanSebKalaha.Classes
                 if (_whosTurn != value)
                 {
                     _whosTurn = value;
-                    RaisePropertyChanged("WhosTurn");
+                    OnPropertyChanged("WhosTurn");
                 }
             }
         }
 
-        private void RaisePropertyChanged(String property)
+        public string Color
+        {
+            get { return _color; }
+            set
+            {
+                if (_color != value)
+                {
+                    _color = value;
+                    OnPropertyChanged("Color");
+                }
+            }
+        }
+
+        public string Player1Name
+        {
+            get { return _player1Name; }
+            set
+            {
+                _player1Name = value;               
+            }
+        }
+
+        public string Player2Name
+        {
+            get { return _player2Name; }
+            set
+            {
+                _player2Name = value;
+            }
+        }
+
+        private void OnPropertyChanged(String property)
         {
             if (PropertyChanged != null)
             {

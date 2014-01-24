@@ -4,13 +4,13 @@
         xmlns:local="clr-namespace:SanSebKalaha" x:Class="SanSebKalaha.MainWindow"
         Title="MainWindow" Height="766" Width="958">
     <Grid Margin="0,0,-8,0">
-        
-        <Label x:Name="c6Label" Content="{Binding MarblesC6}" MouseDown="MouseDownEllipse" Tag="7" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="723,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
-        <Label x:Name="c5Label" Content="{Binding MarblesC5}" MouseDown="MouseDownEllipse" Tag="8" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="611,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
-        <Label x:Name="c4Label" Content="{Binding MarblesC4}" MouseDown="MouseDownEllipse" Tag="9" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="492,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
-        <Label x:Name="c3Label" Content="{Binding MarblesC3}" MouseDown="MouseDownEllipse" Tag="10" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="378,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
-        <Label x:Name="c2Label" Content="{Binding MarblesC2}" MouseDown="MouseDownEllipse" Tag="11" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="257,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
-        <Label x:Name="c1Label" Content="{Binding MarblesC1}" MouseDown="MouseDownEllipse" Tag="12" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="139,83,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
+
+        <Label x:Name="c6Label" Content="{Binding MarblesC6}" MouseDown="MouseDownEllipse" Tag="7" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="723,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
+        <Label x:Name="c5Label" Content="{Binding MarblesC5}" MouseDown="MouseDownEllipse" Tag="8" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="611,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
+        <Label x:Name="c4Label" Content="{Binding MarblesC4}" MouseDown="MouseDownEllipse" Tag="9" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="492,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
+        <Label x:Name="c3Label" Content="{Binding MarblesC3}" MouseDown="MouseDownEllipse" Tag="10" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="378,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
+        <Label x:Name="c2Label" Content="{Binding MarblesC2}" MouseDown="MouseDownEllipse" Tag="11" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="257,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
+        <Label x:Name="c1Label" Content="{Binding MarblesC1}" MouseDown="MouseDownEllipse" Tag="12" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="139,83,0,0" VerticalAlignment="Top" Foreground="DeepPink" FontSize="36" Height="69" Width="77"/>
         <Label x:Name="u6Label" Content="{Binding MarblesU6}" MouseDown="MouseDownEllipse" Tag="5" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="723,322,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
         <Label x:Name="u5Label" Content="{Binding MarblesU5}" MouseDown="MouseDownEllipse" Tag="4" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="611,322,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
         <Label x:Name="u4Label" Content="{Binding MarblesU4}" MouseDown="MouseDownEllipse" Tag="3" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="492,322,0,0" VerticalAlignment="Top" Foreground="DarkBlue" FontSize="36" Height="69" Width="77"/>
@@ -31,34 +31,18 @@
         <Ellipse x:Name="c2" IsEnabled="{Binding CompEllipsesIsEnabled}" MouseDown="MouseDownEllipse" Tag="11" Opacity="0.5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="112" Margin="240,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
         <Ellipse x:Name="bu" Fill="#FFF4F4F5" Opacity="0.5" HorizontalAlignment="Left" Height="372" Margin="827,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
         <Ellipse x:Name="bd" Fill="#FFF4F4F5" Opacity="0.5" HorizontalAlignment="Left" Height="372" Margin="10,51,0,0" Stroke="Black" VerticalAlignment="Top" Width="107"/>
-        <Label x:Name="displayTurn" Content="{Binding WhosTurn}" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="P:" HorizontalAlignment="Left" Margin="869,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.158,0.885"/>
-        <Label x:Name="uPoints" Content="{Binding UserPoints}" HorizontalAlignment="Left" Margin="882,18,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="cPoints" Content="{Binding CompPoints}" HorizontalAlignment="Left" Margin="40,18,0,0" VerticalAlignment="Top"/>
-        <Label Content="P:" HorizontalAlignment="Left" Margin="26,18,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="cName" Content="George" HorizontalAlignment="Left" Margin="40,443,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="uName" Content="You" HorizontalAlignment="Left" Margin="869,443,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="displayTurn" Content="{Binding WhosTurn}" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="394,10,408,0" VerticalAlignment="Top" FontSize="20" Foreground="{Binding Color}" Width="156"/>
+        <Label Content="P:" HorizontalAlignment="Left" Margin="831,206,0,0" VerticalAlignment="Top" FontSize="36" Foreground="DarkBlue"/>
+        <Label x:Name="uPoints" Content="{Binding UserPoints}" HorizontalAlignment="Center" Margin="869,204,31,0" VerticalAlignment="Top" FontSize="40" Foreground="DarkBlue" Height="58" Width="58"/>
+        <Label x:Name="cPoints" Content="{Binding CompPoints}" HorizontalAlignment="Center" Margin="53,204,848,0" VerticalAlignment="Top" FontSize="40" Foreground="DeepPink" Height="58" Width="57"/>
+        <Label Content="P:" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" FontSize="36" Foreground="DeepPink"/>
+        <Label x:Name="cName" Content="{Binding Player2Name}"  HorizontalAlignment="Left" Margin="40,443,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="uName" Content="{Binding Player1Name}" HorizontalAlignment="Left" Margin="869,443,0,0" VerticalAlignment="Top"/>
 
-
-        <Label Content="Score:" HorizontalAlignment="Left" Margin="704,562,0,0" VerticalAlignment="Top"/>
-        <Label Content="High Score" HorizontalAlignment="Left" Margin="704,597,0,0" VerticalAlignment="Top"/>
-        <ListView x:Name="highScore" HorizontalAlignment="Left" Height="100" Margin="799,601,0,0" VerticalAlignment="Top" Width="100">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Label x:Name="userScore" Content="{Binding highscore}" HorizontalAlignment="Left" Margin="821,562,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="lvl2" Content="Top3" HorizontalAlignment="Left" Margin="278,575,0,0" VerticalAlignment="Top" />
-        <RadioButton x:Name="lvl1" Content="Some Guy" HorizontalAlignment="Left" Margin="278,604,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" IsChecked="True"/>
-        <Label Content="Svårighetsgrad:" HorizontalAlignment="Left" Margin="278,544,0,0" VerticalAlignment="Top"/>
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button x:Name="start" Content="Starta" Opacity="05" HorizontalAlignment="Left" Margin="10,562,0,0" VerticalAlignment="Top" Width="75" Click="StartButton_Click" IsEnabled="{Binding StartButtonIsEnabled}"/>
         <Button x:Name="concede" Content="Ge upp" HorizontalAlignment="Left" Margin="10,601,0,0" VerticalAlignment="Top" Width="75" Click="ConcedeButton_Click" IsEnabled="{Binding ConcedeButtonIsEnabled}"/>
-        <Button x:Name="save" Content="Spara i d" HorizontalAlignment="Left" Margin="12,651,0,0" VerticalAlignment="Top" Width="95" Click="SaveButton_Click" />
-        <Button x:Name="get" Content="Hämta från d" HorizontalAlignment="Left" Margin="12,681,0,0" VerticalAlignment="Top" Width="95" Click="GetButton_Click" />
-        <Button x:Name="remove" Content="Ta bort från d" HorizontalAlignment="Left" Margin="130,681,0,0" VerticalAlignment="Top" Width="95" Click="RemoveButton_Click" />
+        <Label x:Name="gameOver" Content="{Binding Announcement}" HorizontalAlignment="Left" Margin="452,562,0,0" VerticalAlignment="Top" Foreground="{Binding Color}" FontSize="18" Width="427" Height="133"/>
         <ComboBox x:Name="board" x:FieldModifier="public" HorizontalAlignment="Left" Margin="114,579,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" IsEnabled="{Binding BoardOptionsIsEnabled}">
             <ComboBox.Items>
                 <ComboBoxItem>Standard</ComboBoxItem>

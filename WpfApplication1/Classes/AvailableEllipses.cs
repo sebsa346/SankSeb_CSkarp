@@ -23,7 +23,7 @@ namespace SanSebKalaha.Classes
                 if (_userEllipsesIsEnabled != value)
                 {
                     _userEllipsesIsEnabled = value;
-                    RaisePropertyChanged("UserEllipsesIsEnabled");
+                    OnPropertyChanged("UserEllipsesIsEnabled");
                 }
             }
         }
@@ -36,17 +36,18 @@ namespace SanSebKalaha.Classes
                 if (_compEllipsesIsEnabled != value)
                 {
                     _compEllipsesIsEnabled = value;
-                    RaisePropertyChanged("CompEllipsesIsEnabled");
+                    OnPropertyChanged("CompEllipsesIsEnabled");
                 }
             }
         }
 
-        private void RaisePropertyChanged(String property)
+        private void OnPropertyChanged(String property)
         {
-            if (PropertyChanged != null)
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
 
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+                handler(this, new PropertyChangedEventArgs(property));
             }
 
         }

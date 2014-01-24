@@ -34,10 +34,5 @@ namespace SanSebKalaha
 
         }
 
-       /* public override string ToString()
-        {
-            return noMarbles.ToString();
-        }*/
-
     }
 }

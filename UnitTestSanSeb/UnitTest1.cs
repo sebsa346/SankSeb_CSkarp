@@ -16,7 +16,7 @@ namespace UnitTestSanSeb
             var rm = new RuleMaster();
             // act
             rm.gameRules(startingMarblesStandard);
-            int actual = rm.arrayTest[3]; 
+            int actual = rm.theGameBoard[3]; 
             // assert
             Assert.AreEqual(expected, actual);
         }
@@ -41,13 +41,13 @@ namespace UnitTestSanSeb
             var rm = new RuleMaster();
             // act 1
             rm.gameRules(startingMarbles);
-            rm.arrayTest[3] = 0;
-            int actualAtPos0Before = rm.arrayTest[0];
-            int actualAtPos1Before = rm.arrayTest[1];
-            int actualAtPos2Before = rm.arrayTest[2];
-            int actualAtPos3Before = rm.arrayTest[3];
-            int actualAtPos9Before = rm.arrayTest[9];
-            int actualAtHomeBefore = rm.arrayTest[6];
+            rm.theGameBoard[3] = 0;
+            int actualAtPos0Before = rm.theGameBoard[0];
+            int actualAtPos1Before = rm.theGameBoard[1];
+            int actualAtPos2Before = rm.theGameBoard[2];
+            int actualAtPos3Before = rm.theGameBoard[3];
+            int actualAtPos9Before = rm.theGameBoard[9];
+            int actualAtHomeBefore = rm.theGameBoard[6];
             // assert 1
             Assert.AreEqual(expectedAtPos0Before, actualAtPos0Before);
             Assert.AreEqual(expectedAtPos1Before, actualAtPos1Before);
@@ -68,12 +68,12 @@ namespace UnitTestSanSeb
             int expectedAtHomeAfter = 4;
             // act 2
             rm.MouseDownEllipsee(EllipsePos);
-            int actualAtPos0After = rm.arrayTest[0];
-            int actualAtPos1After = rm.arrayTest[1];
-            int actualAtPos2After = rm.arrayTest[2];
-            int actualAtPos3After = rm.arrayTest[3];
-            int actualAtPos9After = rm.arrayTest[9];
-            int actualAtHomeAfter = rm.arrayTest[6];
+            int actualAtPos0After = rm.theGameBoard[0];
+            int actualAtPos1After = rm.theGameBoard[1];
+            int actualAtPos2After = rm.theGameBoard[2];
+            int actualAtPos3After = rm.theGameBoard[3];
+            int actualAtPos9After = rm.theGameBoard[9];
+            int actualAtHomeAfter = rm.theGameBoard[6];
             // assert 2
             Assert.AreEqual(expectedAtPos0After, actualAtPos0After);
             Assert.AreEqual(expectedAtPos1After, actualAtPos1After);
@@ -103,11 +103,11 @@ namespace UnitTestSanSeb
             rm.gameRules(startingMarbles);
             rm.playersTurn.WhosTurn = "George";
             rm.MouseDownEllipsee(EllipsePos);
-            int actualAtPos12 = rm.arrayTest[12];
-            int actualAtPlayer2Home = rm.arrayTest[13];
-            int actualAtPos0 = rm.arrayTest[0];
-            int actualAtPos1 = rm.arrayTest[1];
-            int actualAtPos2 = rm.arrayTest[2];
+            int actualAtPos12 = rm.theGameBoard[12];
+            int actualAtPlayer2Home = rm.theGameBoard[13];
+            int actualAtPos0 = rm.theGameBoard[0];
+            int actualAtPos1 = rm.theGameBoard[1];
+            int actualAtPos2 = rm.theGameBoard[2];
             // assert
             Assert.AreEqual(expectedAtPos12, actualAtPos12);
             Assert.AreEqual(expectedAtPlayer2Home, actualAtPlayer2Home);

@@ -23,7 +23,7 @@ namespace SanSebKalaha.Classes
                 if (startButtonIsEnabled != value)
                 {
                     startButtonIsEnabled = value;
-                    RaisePropertyChanged("StartButtonIsEnabled");
+                    OnPropertyChanged("StartButtonIsEnabled");
                 }
             }
         }
@@ -36,17 +36,18 @@ namespace SanSebKalaha.Classes
                 if (concedeButtonIsEnabled != value)
                 {
                     concedeButtonIsEnabled = value;
-                    RaisePropertyChanged("ConcedeButtonIsEnabled");
+                    OnPropertyChanged("ConcedeButtonIsEnabled");
                 }
             }
         }
 
-        private void RaisePropertyChanged(String property)
+        private void OnPropertyChanged(String property)
         {
-            if (PropertyChanged != null)
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
 
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+                handler(this, new PropertyChangedEventArgs(property));
             }
 
         }
